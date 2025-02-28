@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trámites en Línea</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style_index.css">
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class="main-container">
+            <div class="header">
+                <img src="https://www.saiasoftware.com/wp-content/uploads/2024/imagenesdemos/logo_portal.png"
+                    alt="Logo Organización">
+                <h2>Trámites en Línea</h2>
+                <p class="text-muted">Seleccione el trámite que desea realizar</p>
+            </div>
+
+            <div id="services-container">
+                <div class="row">
+                    <!-- Servicio 1 -->
+                    <div class="col-md-4">
+                        <div class="service-card text-center" id="service-1">
+                            <i class="fas fa-comments"></i>
+                            <h4>Registro de PQRS</h4>
+                            <p>Registre sus peticiones, quejas, reclamos, denuncias y sugerencias en línea de manera
+                                sencilla y efectiva.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="col-md-4">
+                        <div class="service-card text-center" id="service-2">
+                            <i class="fas fa-user-edit"></i>
+                            <h4>Actualización de Datos</h4>
+                            <p>Mantenga toda su información personal y corporativa al día en nuestros sistemas de forma
+                                segura.</p>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="col-md-4">
+                        <div class="service-card text-center" id="service-3">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Portal de Proveedores</h4>
+                            <p>Acceda a nuestra plataforma exclusiva para proveedores y gestione
+                                sus documentos, órdenes y pagos en línea.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor para el iframe -->
+            <div class="service-form" id="iframe-container">
+                <div class="ratio ratio-16x9 mb-4">
+                    <iframe id="service-iframe" src="" allowfullscreen></iframe>
+                </div>
+                <button class="btn btn-back" id="back-btn"><i class="fas fa-arrow-left me-2"></i>Volver a
+                    Trámites</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script js -->
+    <script text="javascript" src="js/script_index.js"> </script>
+
+</body>
+
+</html>
