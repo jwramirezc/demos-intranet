@@ -142,3 +142,8 @@ body {
   padding: 20px;
   line-height: 1.6;
 }
+
+#modal-content {
+  font-size: smaller;
+  text-align: justify;
+}
