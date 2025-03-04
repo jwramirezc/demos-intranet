@@ -68,7 +68,7 @@ body {
   margin-bottom: 0.8rem;
 }
 
-.service-form {
+/* .service-form {
   display: none;
   background: white;
   border-radius: 10px;
@@ -78,7 +78,7 @@ body {
   animation: fadeIn 0.5s ease;
   width: 100%;
   height: max-content;
-}
+} */
 
 .ratio-16x9 {
   --bs-aspect-ratio: 75%;
@@ -129,4 +129,16 @@ body {
 .form-control:focus {
   border-color: #2980b9;
   box-shadow: 0 0 0 0.25rem rgba(41, 128, 185, 0.25);
+}
+
+/* ventana modal */
+
+.modal-title {
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px;
+  line-height: 1.6;
 }

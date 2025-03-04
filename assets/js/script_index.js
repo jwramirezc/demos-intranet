@@ -4,25 +4,28 @@ document.addEventListener('DOMContentLoaded', function () {
   const service2 = document.getElementById('service-2');
   const service3 = document.getElementById('service-3');
   let url = '';
+  let nameWindow = '';
 
-  const iframeContainer = document.getElementById('iframe-container');
-  const backBtn = document.getElementById('back-btn');
+  const modalContainer = document.getElementById('miModal');
+  // const backBtn = document.getElementById('back-btn');
 
   // Mostrar iframe al hacer clic en cualquier servicio
   service1.addEventListener('click', function () {
     url = 'https://www.saiasoftware.com/pqrsdemo2/';
+    nameWindow = 'Gestión de PQRS';
     // Actualizar el iframe con la URL seleccionada
     document.getElementById('service-iframe').src = url;
-    servicesContainer.style.display = 'none';
-    iframeContainer.style.display = 'block';
+    document.getElementById('modalLabel').innerHTML = nameWindow;
+    modalContainer.style.display = 'block';
   });
 
   service2.addEventListener('click', function () {
     url = 'https://saiademo2.netsaia.com/ws/factura_email/index.html';
+    nameWindow = 'Gestión de Facturas';
     // Actualizar el iframe con la URL seleccionada
     document.getElementById('service-iframe').src = url;
-    servicesContainer.style.display = 'none';
-    iframeContainer.style.display = 'block';
+    document.getElementById('modalLabel').innerHTML = nameWindow;
+    modalContainer.style.display = 'block';
   });
 
   service3.addEventListener('click', function () {

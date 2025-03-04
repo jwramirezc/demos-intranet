@@ -27,7 +27,8 @@
                 <div class="row">
                     <!-- Servicio 1 -->
                     <div class="col-md-4">
-                        <div class="service-card text-center" id="service-1">
+                        <div class="service-card text-center" id="service-1" data-bs-toggle="modal"
+                            data-bs-target="#miModal">
                             <i class="fas fa-comments"></i>
                             <h5>Registro de </br>PQRS</h5>
                             <p>Registre sus peticiones, quejas, reclamos, denuncias y sugerencias en línea de manera
@@ -37,7 +38,8 @@
 
                     <!-- Servicio 2 -->
                     <div class="col-md-4">
-                        <div class="service-card text-center" id="service-2">
+                        <div class="service-card text-center" id="service-2" data-bs-toggle="modal"
+                            data-bs-target="#miModal">
                             <i class="fas fa-user-edit"></i>
                             <h5>Actualización de Datos</h5>
                             <p>Mantenga toda su información personal y corporativa al día en nuestros sistemas de forma
@@ -58,13 +60,42 @@
             </div>
 
             <!-- Contenedor para el iframe -->
-            <div class="service-form" id="iframe-container">
+            <!-- <div class="service-form" id="iframe-container">
                 <div class="ratio ratio-16x9 mb-4">
                     <iframe id="service-iframe" src="" allowfullscreen></iframe>
                 </div>
                 <button class="btn btn-back" id="back-btn"><i class="fas fa-arrow-left me-2"></i>Volver a
                     Trámites</button>
+            </div> -->
+
+
+            <!-- contenedor ventana modal PQRS -->
+
+            <div class="container_modal">
+                <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalLabel"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ratio ratio-16x9 mb-3">
+                                    <iframe src="" title="Contenido embebido" allowfullscreen
+                                        id="service-iframe"></iframe>
+                                </div>
+                                <p>Este es el contenido de la ventana modal. Puedes poner aquí cualquier información que
+                                    necesites mostrar.</p>
+                                <p>Bootstrap hace que sea fácil implementar ventanas modales responsivas.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
     </div>
 
