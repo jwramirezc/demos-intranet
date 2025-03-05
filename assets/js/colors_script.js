@@ -55,9 +55,10 @@ class ThemeSwitcher {
     // Elementos específicos a cambiar
     this.body = document.body;
     this.h5Elements = document.querySelectorAll('h5');
-    this.h5Elements = document.querySelectorAll('h2');
+    this.h2Elements = document.querySelectorAll('h2');
     this.iconElements = document.querySelectorAll('i.icon-service');
     this.loginButton = document.getElementById('btn-login');
+    this.serviceButton = document.querySelectorAll('.btn-services');
     this.colorButtons = document.querySelectorAll('.color-button');
 
     // Tema predeterminado
@@ -121,6 +122,15 @@ class ThemeSwitcher {
     // Aplicar color a todos los h5
     this.h5Elements.forEach(element => {
       element.style.color = theme.primary;
+    });
+    // Aplicar color a todos los h2
+    this.h2Elements.forEach(element => {
+      element.style.color = theme.primary;
+    });
+
+    // Aplicar color a todos los btn-services
+    this.serviceButton.forEach(element => {
+      element.style.background = theme.button;
     });
 
     // Aplicar color a todos los iconos Font Awesome

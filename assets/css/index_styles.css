@@ -145,6 +145,14 @@ body {
   margin: 20px;
 }
 
+/* botones de los servicios */
+
+.btn-services {
+  font-size: small;
+  height: min-content;
+  padding: 5px 10px;
+}
+
 /* Estilo de los botones de color */
 .color-button {
   width: 6px;
