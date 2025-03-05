@@ -94,7 +94,6 @@ class ThemeSwitcher {
       console.error(`El tema "${color}" no está definido`);
       return;
     }
-
     const theme = this.themes[color];
 
     // Aplicar color de fondo
@@ -149,25 +148,6 @@ class ThemeSwitcher {
         btn.classList.add('active');
       }
     });
-  }
-
-  /**
-   * Añade un nuevo tema
-   * @param {string} name - Nombre del tema
-   * @param {Object} colors - Colores del tema
-   */
-  addTheme(name, colors) {
-    if (typeof name !== 'string' || typeof colors !== 'object') {
-      console.error('Formato incorrecto para añadir tema');
-      return;
-    }
-
-    if (!colors.primary || !colors.icon || !colors.background) {
-      console.error('El tema debe incluir primary, icon y background');
-      return;
-    }
-
-    this.themes[name] = colors;
   }
 }
 

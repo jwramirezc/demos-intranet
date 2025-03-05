@@ -160,7 +160,7 @@ body {
 }
 
 .color-button.active {
-  border-color: #333;
+  background-color: #333;
 }
 
 /* Colores específicos de los botones */
