@@ -1,5 +1,4 @@
 body {
-  background: linear-gradient(120deg, #0d85e8, #8e44ad);
   min-height: 100vh;
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -68,18 +67,6 @@ body {
   margin-bottom: 0.8rem;
 }
 
-/* .service-form {
-  display: none;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin-top: 1.5rem;
-  animation: fadeIn 0.5s ease;
-  width: 100%;
-  height: max-content;
-} */
-
 .ratio-16x9 {
   --bs-aspect-ratio: 75%;
 }
@@ -146,4 +133,57 @@ body {
 #modal-content {
   font-size: smaller;
   text-align: justify;
+}
+
+/* Colores */
+
+/* Contenedor de botones de color */
+.color-buttons {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+  margin: 20px;
+}
+
+/* Estilo de los botones de color */
+.color-button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+
+.color-button.active {
+  border-color: #333;
+}
+
+/* Colores específicos de los botones */
+.red {
+  background-color: #e74c3c;
+}
+
+.blue {
+  background-color: #3498db;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.yellow {
+  background-color: #f1c40f;
+}
+
+.purple {
+  background-color: #9b59b6;
+}
+
+.gray {
+  background-color: #607d8b;
 }
