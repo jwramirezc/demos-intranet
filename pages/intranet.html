@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Proveedor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/intranet-styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css">
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://www.saiasoftware.com/wp-content/uploads/2024/imagenesdemos/logo_portal_demo2.png"
+                alt="Logo">
+            <h5 class="text-white mb-0">Portal Proveedores</h5>
+        </div>
+        <ul class="nav flex-column mt-3">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    <i class="fas fa-home"></i>
+                    Panel Principal
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-file-invoice"></i>
+                    Estado de Facturas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-upload"></i>
+                    Cargar Facturas
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Pagos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-chart-line"></i>
+                    Reportes
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- Welcome Section -->
+            <div class="row mb-4">
+                <div class="col">
+                    <h2>Bienvenido, Proveedor</h2>
+                    <p class="text-muted">Última actualización: 21 Feb, 2025 10:30 AM</p>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="dashboard-card p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted mb-2">Facturas Pendientes</h6>
+                                <h3 class="mb-0">12</h3>
+                            </div>
+                            <i class="fas fa-clock card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted mb-2">Facturas Aprobadas</h6>
+                                <h3 class="mb-0">45</h3>
+                            </div>
+                            <i class="fas fa-check-circle card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted mb-2">Pagos Pendientes</h6>
+                                <h3 class="mb-0">$12,450</h3>
+                            </div>
+                            <i class="fas fa-dollar-sign card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dashboard-card p-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted mb-2">Pagos del Mes</h6>
+                                <h3 class="mb-0">$45,680</h3>
+                            </div>
+                            <i class="fas fa-chart-bar card-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <div class="dashboard-card p-4">
+                        <h5 class="mb-4">Cargar Nueva Factura</h5>
+                        <div class="upload-zone" id="factura-zone">
+                            <button type="button" class="btn btn-primary btn-lg mb-5 ms-5 mt-5" id="btn-upload">Ingresar
+                                una nueva Factura</button>
+                            <button type="button" class="btn btn-secondary btn-lg mb-5 ms-5 mt-5"
+                                id="mas-facturas">Ingresar varias
+                                Facturas</button>
+                            <p class="text-muted mb-0" id="text-upload">Elige la opción que desees para enviar tus
+                                Facturas.</p>
+
+                            <div id="contenedor-iframe">
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Invoices -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="dashboard-card p-4">
+                        <h5 class="mb-4">Facturas Recientes</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nº Factura</th>
+                                        <th>Fecha</th>
+                                        <th>Monto</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>FAC-001</td>
+                                        <td>20 Feb, 2025</td>
+                                        <td>$2,500</td>
+                                        <td><span class="status-badge bg-warning text-dark">Pendiente</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i
+                                                    class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FAC-002</td>
+                                        <td>19 Feb, 2025</td>
+                                        <td>$3,750</td>
+                                        <td><span class="status-badge bg-success text-white">Aprobada</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i
+                                                    class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>FAC-003</td>
+                                        <td>18 Feb, 2025</td>
+                                        <td>$1,850</td>
+                                        <td><span class="status-badge bg-danger text-white">Rechazada</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary"><i
+                                                    class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info"><i
+                                                    class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script_intranet.js"> </script>
+
+</body>
+
+</html>

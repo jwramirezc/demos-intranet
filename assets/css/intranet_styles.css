@@ -1,0 +1,146 @@
+:root {
+  --sidebar-width: 250px;
+  --primary-color: #0d85e8;
+  --secondary-color: #0d85e8;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f8f9fa;
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(58, 58, 58, 0.885);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--primary-color);
+  min-height: 100vh;
+  position: fixed;
+  transition: all 0.3s;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: var(--secondary-color);
+  text-align: center;
+}
+
+.sidebar-header img {
+  width: 150px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 15px 20px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.nav-link i {
+  width: 25px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.upload-zone {
+  border: 2px dashed #dee2e6;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.upload-zone:hover {
+  border-color: var(--primary-color);
+  background: rgba(41, 128, 185, 0.05);
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+#facturaDropzone {
+  min-height: 200px;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+#facturaDropzone .dz-message {
+  text-align: center;
+  margin: 0;
+}
+
+#facturaDropzone.dz-started .dz-message {
+  display: none;
+}
+
+.cargando {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
