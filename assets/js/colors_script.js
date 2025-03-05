@@ -11,39 +11,53 @@ class ThemeSwitcher {
       red: {
         primary: '#e74c3c',
         icon: '#e74c3c',
-        background: '#ffebee',
+        background:
+          'linear-gradient(120deg, rgba(231, 76, 60, 0.3), rgba(155, 89, 182, 0.3))',
+        button: '#e74c3c',
       },
       blue: {
         primary: '#3498db',
         icon: '#3498db',
-        background: '#e3f2fd',
+        background:
+          'linear-gradient(120deg, rgba(13, 133, 232, 0.3), rgba(142, 68, 173, 0.3))',
+        button: '#3498db',
       },
       green: {
         primary: '#2ecc71',
         icon: '#2ecc71',
-        background: '#e8f5e9',
+        background:
+          'linear-gradient(120deg, rgba(46, 204, 113, 0.3), rgba(52, 152, 219, 0.3))',
+        button: '#2ecc71',
       },
       yellow: {
         primary: '#f1c40f',
         icon: '#f39c12',
-        background: '#fffde7',
+        background:
+          'linear-gradient(120deg, rgba(241, 196, 15, 0.3), rgba(231, 76, 60, 0.3))',
+        button: '#f1c40f',
       },
       purple: {
         primary: '#9b59b6',
         icon: '#9b59b6',
-        background: '#f3e5f5',
+        background:
+          'linear-gradient(120deg, rgba(155, 89, 182, 0.3), rgba(52, 152, 219, 0.3))',
+        button: '#9b59b6',
       },
       gray: {
         primary: '#607D8B',
         icon: '#78909C',
-        background: '#ECEFF1',
+        background:
+          'linear-gradient(120deg, rgba(96, 125, 139, 0.3), rgba(52, 73, 94, 0.3))',
+        button: '#607D8B',
       },
     };
 
     // Elementos específicos a cambiar
     this.body = document.body;
     this.h5Elements = document.querySelectorAll('h5');
-    this.iconElements = document.querySelectorAll('i.fas');
+    this.h5Elements = document.querySelectorAll('h2');
+    this.iconElements = document.querySelectorAll('i.icon-service');
+    this.loginButton = document.getElementById('btn-login');
     this.colorButtons = document.querySelectorAll('.color-button');
 
     // Tema predeterminado
@@ -57,7 +71,12 @@ class ThemeSwitcher {
    * Inicializa la aplicación
    */
   init() {
-    this.setupEventListeners();
+    // Solo configurar event listeners si existen botones de color
+    if (this.colorButtons.length > 0) {
+      this.setupEventListeners();
+    }
+
+    // Siempre cargar el tema guardado
     this.loadSavedTheme();
   }
 
@@ -97,7 +116,7 @@ class ThemeSwitcher {
     const theme = this.themes[color];
 
     // Aplicar color de fondo
-    this.body.style.backgroundColor = theme.background;
+    this.body.style.background = theme.background;
 
     // Aplicar color a todos los h5
     this.h5Elements.forEach(element => {
@@ -117,6 +136,23 @@ class ThemeSwitcher {
 
     // Para elementos añadidos dinamicamente
     this.refreshDynamicElements(theme);
+
+    // Aplicar color al botón de login si existe
+    if (this.loginButton) {
+      this.loginButton.style.backgroundColor = theme.button;
+      this.loginButton.style.borderColor = theme.button;
+    }
+
+    // Actualizar botón activo solo si hay botones de selección
+    if (this.colorButtons.length > 0) {
+      this.updateActiveButton(color);
+    }
+
+    // Guardar preferencia
+    localStorage.setItem('selectedTheme', color);
+
+    // Para elementos añadidos dinamicamente
+    this.refreshDynamicElements(theme);
   }
 
   /**
@@ -126,7 +162,7 @@ class ThemeSwitcher {
   refreshDynamicElements(theme) {
     // Seleccionar nuevamente para capturar elementos añadidos dinamicamente
     const dynamicH5 = document.querySelectorAll('h5');
-    const dynamicIcons = document.querySelectorAll('i.fas');
+    const dynamicIcons = document.querySelectorAll('i.icon-service');
 
     dynamicH5.forEach(element => {
       element.style.color = theme.primary;
@@ -157,4 +193,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Hacer disponible globalmente
   window.themeSwitcher = themeSwitcher;
+
+  console.log(
+    'Theme Switcher inicializado. Tema actual: ' +
+      localStorage.getItem('selectedTheme')
+  );
 });

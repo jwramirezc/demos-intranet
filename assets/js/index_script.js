@@ -34,7 +34,7 @@ class ServiceModal {
           'Complete todos los campos obligatorios marcados con asterisco (*). Este formulario le permite actualizar su información personal en nuestra base de datos. Para garantizar una correcta actualización, verifique que todos los datos proporcionados sean precisos y estén completos. Al enviar este formulario, su información será procesada según nuestra política de protección de datos. Recibirá una confirmación de actualización en el correo electrónico registrado. Manteniendo sus datos actualizados podremos brindarle un mejor servicio y comunicación.',
       },
       service3: {
-        url: 'https://www.saiasoftware.com/demo-intranet/',
+        url: './pages/login.html',
         nameWindow: '',
         modalContent: '',
       },
