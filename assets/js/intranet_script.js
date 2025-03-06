@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const textUpload = document.getElementById('text-upload');
 
   // URL destino
-  const targetUrl = 'https://saiademo2.netsaia.com/ws/factura_email/index.html';
+  const targetUrl = CONFIG.paths.services.factura;
 
   btnUpload.addEventListener('click', () => {
     // Obtener el contenedor

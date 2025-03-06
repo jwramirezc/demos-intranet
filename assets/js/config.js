@@ -7,7 +7,7 @@ const CONFIG = {
     },
     services: {
       pqrs: '/pqrsdemo2/',
-      datos: 'https://saiademo2.netsaia.com/ws/factura_email/index.html',
+      factura: 'https://saiademo2.netsaia.com/ws/factura_email/index.html',
       login: './pages/login.html',
     },
   },
@@ -28,10 +28,3 @@ const CONFIG = {
     },
   },
 };
-// service1: {
-//     url: CONFIG.paths.services.pqrs.startsWith('http')
-//       ? CONFIG.paths.services.pqrs
-//       : CONFIG.baseUrl + CONFIG.paths.services.pqrs,
-//     nameWindow: CONFIG.serviceInfo.service1.nameWindow,
-//     modalContent: CONFIG.serviceInfo.service1.modalContent,
-//   },
