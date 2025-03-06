@@ -22,21 +22,21 @@ class ServiceModal {
     // Datos de servicios
     this.serviceData = {
       service1: {
-        url: 'https://www.saiasoftware.com/pqrsdemo2/',
-        nameWindow: 'Gestión de PQRS',
-        modalContent:
-          'Complete todos los campos obligatorios marcados con asterisco (*). Este formulario le permite registrar Peticiones, Quejas o Reclamos relacionados con nuestros servicios. Para una gestión eficiente, proporcione información precisa y detallada sobre su caso. Al enviar este formulario, sus datos serán procesados según nuestra política de protección de datos. Recibirá confirmación y número de radicado en el correo electrónico registrado. Tiempo estimado de respuesta: 5-15 días hábiles según el tipo de solicitud.',
+        url: CONFIG.paths.services.pqrs.startsWith('http')
+          ? CONFIG.paths.services.pqrs
+          : CONFIG.baseUrl + CONFIG.paths.services.pqrs,
+        nameWindow: CONFIG.serviceInfo.service1.nameWindow,
+        modalContent: CONFIG.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: 'https://saiademo2.netsaia.com/ws/factura_email/index.html',
-        nameWindow: 'Gestión de Datos',
-        modalContent:
-          'Complete todos los campos obligatorios marcados con asterisco (*). Este formulario le permite actualizar su información personal en nuestra base de datos. Para garantizar una correcta actualización, verifique que todos los datos proporcionados sean precisos y estén completos. Al enviar este formulario, su información será procesada según nuestra política de protección de datos. Recibirá una confirmación de actualización en el correo electrónico registrado. Manteniendo sus datos actualizados podremos brindarle un mejor servicio y comunicación.',
+        url: CONFIG.paths.services.datos, // Ya contiene la URL completa
+        nameWindow: CONFIG.serviceInfo.service2.nameWindow,
+        modalContent: CONFIG.serviceInfo.service2.modalContent,
       },
       service3: {
-        url: './pages/login.html',
-        nameWindow: '',
-        modalContent: '',
+        url: CONFIG.paths.services.login, // URL relativa
+        nameWindow: CONFIG.serviceInfo.service3.nameWindow,
+        modalContent: CONFIG.serviceInfo.service3.modalContent,
       },
     };
 
