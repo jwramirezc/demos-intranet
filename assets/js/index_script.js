@@ -29,7 +29,7 @@ class ServiceModal {
         modalContent: CONFIG.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: CONFIG.paths.services.factura, // Ya contiene la URL completa
+        url: CONFIG.paths.services.hojaVida, // Ya contiene la URL completa
         nameWindow: CONFIG.serviceInfo.service2.nameWindow,
         modalContent: CONFIG.serviceInfo.service2.modalContent,
       },
