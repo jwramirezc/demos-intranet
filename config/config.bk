@@ -6,7 +6,7 @@ const CONFIG = {
       logo: '/wp-content/uploads/2024/imagenesdemos/logo_portal_demo2.png',
     },
     services: {
-      pqrs: '/pqrsdemo2/',
+      pqrs: 'https://www.saiasoftware.com',
       factura: 'https://saiademo3.netsaia.com/ws/factura_email/index.html',
       hojaVida:
         'https://saiademo2.netsaia.com/ws/ingreso_de_person/index.html?d=006599a59d42289392ba21b8efcf2cd4',
