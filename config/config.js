@@ -7,7 +7,7 @@ const CONFIG = {
     },
     services: {
       pqrs: '/pqrsdemo2/',
-      factura: 'https://saiademo3.netsaia.com/ws/factura_email/index.html',
+      factura: 'https://saiademo2.netsaia.com/ws/factura_email/index.html',
       hojaVida:
         'https://saiademo2.netsaia.com/ws/ingreso_de_person/index.html?d=006599a59d42289392ba21b8efcf2cd4',
       login: './pages/login.html',

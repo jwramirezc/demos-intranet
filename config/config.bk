@@ -3,11 +3,11 @@ const CONFIG = {
   baseUrl: 'https://www.saiasoftware.com',
   paths: {
     images: {
-      logo: '/wp-content/uploads/2024/imagenesdemos/logo_portal_demo2.png',
+      logo: '/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_demo2.png',
     },
     services: {
-      pqrs: 'https://www.saiasoftware.com',
-      factura: 'https://saiademo3.netsaia.com/ws/factura_email/index.html',
+      pqrs: '/pqrsdemo2/',
+      factura: 'https://saiademo2.netsaia.com/ws/factura_email/index.html',
       hojaVida:
         'https://saiademo2.netsaia.com/ws/ingreso_de_person/index.html?d=006599a59d42289392ba21b8efcf2cd4',
       login: './pages/login.html',
