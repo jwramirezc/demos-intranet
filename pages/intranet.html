@@ -61,6 +61,12 @@
                     Reportes
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    Órdenes de Compra
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -148,7 +154,7 @@
             </div>
 
             <!-- Recent Invoices -->
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="dashboard-card p-4">
                         <h5 class="mb-4">Facturas Recientes</h5>
@@ -206,6 +212,107 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Órdenes de Compra -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="dashboard-card p-4">
+                        <h5 class="mb-4">Órdenes de Compra</h5>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nº Orden</th>
+                                        <th>Fecha Emisión</th>
+                                        <th>Fecha Entrega</th>
+                                        <th>Monto Total</th>
+                                        <th>Estado</th>
+                                        <th>Pagado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>OC-2025-0123</td>
+                                        <td>15 Feb, 2025</td>
+                                        <td>01 Mar, 2025</td>
+                                        <td>$4,750</td>
+                                        <td><span class="status-badge bg-success text-white">Aprobada</span></td>
+                                        <td><span class="status-badge bg-warning text-dark">Pendiente</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip"
+                                                title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-success" data-bs-toggle="tooltip"
+                                                title="Confirmar recepción"><i class="fas fa-check"></i></button>
+                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="tooltip"
+                                                title="Descargar"><i class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OC-2025-0118</td>
+                                        <td>10 Feb, 2025</td>
+                                        <td>25 Feb, 2025</td>
+                                        <td>$1,830</td>
+                                        <td><span class="status-badge bg-info text-white">En Proceso</span></td>
+                                        <td><span class="status-badge bg-secondary text-white">No Aplica</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip"
+                                                title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="tooltip"
+                                                title="Descargar"><i class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OC-2025-0105</td>
+                                        <td>05 Feb, 2025</td>
+                                        <td>20 Feb, 2025</td>
+                                        <td>$3,200</td>
+                                        <td><span class="status-badge bg-primary text-white">Entregada</span></td>
+                                        <td><span class="status-badge bg-success text-white">Completo</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip"
+                                                title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="tooltip"
+                                                title="Descargar"><i class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OC-2025-0097</td>
+                                        <td>28 Ene, 2025</td>
+                                        <td>15 Feb, 2025</td>
+                                        <td>$6,500</td>
+                                        <td><span class="status-badge bg-danger text-white">Cancelada</span></td>
+                                        <td><span class="status-badge bg-secondary text-white">No Aplica</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip"
+                                                title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="tooltip"
+                                                title="Descargar"><i class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OC-2025-0089</td>
+                                        <td>25 Ene, 2025</td>
+                                        <td>10 Feb, 2025</td>
+                                        <td>$2,850</td>
+                                        <td><span class="status-badge bg-primary text-white">Entregada</span></td>
+                                        <td><span class="status-badge bg-warning text-dark">Parcial</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="tooltip"
+                                                title="Ver detalles"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-outline-info" data-bs-toggle="tooltip"
+                                                title="Descargar"><i class="fas fa-download"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-primary">Ver todas las órdenes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -216,7 +323,56 @@
     <script text="text/javascript" src="../assets/js/apply_config.js"> </script>
     <script text="text/javascript" src="../config/config.js"> </script>
 
+    <!-- Inicializar tooltips de Bootstrap -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar todos los tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
 
+            // Código existente para manejo de facturas
+            const btnUpload = document.getElementById('btn-upload');
+            const btnMoreFacturas = document.getElementById('mas-facturas');
+            const textUpload = document.getElementById('text-upload');
+            // URL destino
+            const targetUrl = CONFIG.paths.services.factura;
+
+            btnUpload.addEventListener('click', () => {
+                // Obtener el contenedor
+                const container = document.getElementById('contenedor-iframe');
+                // Versión con spinner
+                container.innerHTML = `
+                <div class="cargando">
+                    <div class="spinner"></div>
+                    <p>CARGANDO...</p>
+                </div>
+                `;
+                // Crear el iframe
+                const iframe = document.createElement('iframe');
+                iframe.src = targetUrl;
+                iframe.style.width = '100%';
+                iframe.style.height = '500px';
+                iframe.style.border = 'none';
+                iframe.style.display = 'none'; // Ocultar el iframe inicialmente
+                // Cuando el iframe termine de cargar, mostrar el contenido y ocultar el mensaje
+                iframe.onload = function () {
+                    document.querySelector('.cargando').style.display = 'none';
+                    iframe.style.display = 'block';
+                };
+                // Añadir el iframe al contenedor (junto al mensaje de carga)
+                container.appendChild(iframe);
+            });
+
+            // Función para ocultar elementos
+            function hideElements() {
+                btnUpload.style.display = 'none';
+                btnMoreFacturas.style.display = 'none';
+                textUpload.innerHTML = 'Por Favor Diligencie los Datos de la Factura';
+            }
+        });
+    </script>
 </body>
 
 </html>
