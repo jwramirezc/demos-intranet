@@ -1,0 +1,20 @@
+/* Contenedor del logo con tamaño fijo */
+.logo-container {
+  width: 200px; /* Ancho fijo del contenedor */
+  height: 100px; /* Alto fijo del contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Para asegurar que el logo no desborde */
+  position: relative;
+  /* border: 1px solid #333; */
+}
+
+/* El logo mantendrá sus proporciones */
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Mantiene proporciones y asegura que todo el logo sea visible */
+}
