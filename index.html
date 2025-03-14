@@ -43,10 +43,9 @@
                     <div class="col-md-4">
                         <div class="service-card text-center" id="service-2" data-bs-toggle="modal"
                             data-bs-target="#miModal">
-                            <i class="fas fa-user-edit icon-service"></i>
-                            <h5>Hojas de Vida</h5>
-                            <p>Ingresa tu curriculum de forma segura en nuestro sistema para
-                                participar en procesos de selección.</p>
+                            <i id='icon-proceso' class="icon-service"></i>
+                            <h5 id="nombre-proceso"></h5>
+                            <p id="description-proceso"></p>
                             <button type="button" class="btn btn-primary btn-sm btn-services">Crear Hoja de
                                 Vida</button>
                         </div>
@@ -66,7 +65,7 @@
                 </div>
             </div>
 
-            <!-- contenedor ventana modal PQRS -->
+            <!-- contenedor ventana modal -->
 
             <div class="container_modal">
                 <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">

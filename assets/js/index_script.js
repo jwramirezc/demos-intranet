@@ -14,8 +14,11 @@ class ServiceModal {
     this.service2 = document.getElementById('service-2');
     this.service3 = document.getElementById('service-3');
 
-    // Elementos del modal
+    // Elementos de tarjetas y modal
     this.serviceIframe = document.getElementById('service-iframe');
+    this.iconProcesoSaia = document.getElementById('icon-proceso');
+    this.labelProcesoSaia = document.getElementById('nombre-proceso');
+    this.textProcesoSaia = document.getElementById('description-proceso');
     this.nameWindow = document.getElementById('modal-label');
     this.modalContent = document.getElementById('modal-content');
 
@@ -29,7 +32,10 @@ class ServiceModal {
         modalContent: CONFIG.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: CONFIG.paths.services.hojaVida, // Ya contiene la URL completa
+        url: CONFIG.paths.services.enlaceProcesoSaia, // Ya contiene la URL completa
+        iconProcesoSaia: CONFIG.serviceInfo.service2.iconProcesoSaia,
+        labelProcesoSaia: CONFIG.serviceInfo.service2.labelProcesoSaia,
+        textProcesoSaia: CONFIG.serviceInfo.service2.textProcesoSaia,
         nameWindow: CONFIG.serviceInfo.service2.nameWindow,
         modalContent: CONFIG.serviceInfo.service2.modalContent,
       },
@@ -42,6 +48,21 @@ class ServiceModal {
 
     // Inicializar los event listeners
     this.initEventListeners();
+    this.initProcess();
+  }
+
+  /**
+   * Inicializa los datos del proceso a medida
+   */
+  initProcess() {
+    this.service2.labelProcesoSaia =
+      CONFIG.serviceInfo.service2.labelProcesoSaia;
+    this.service2.textProcesoSaia = CONFIG.serviceInfo.service2.textProcesoSaia;
+    this.service2.iconProcesoSaia = CONFIG.serviceInfo.service2.iconProcesoSaia;
+
+    this.iconProcesoSaia.className = this.service2.iconProcesoSaia;
+    this.labelProcesoSaia.innerHTML = this.service2.labelProcesoSaia;
+    this.textProcesoSaia.innerHTML = this.service2.textProcesoSaia;
   }
 
   /**
