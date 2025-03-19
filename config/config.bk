@@ -1,6 +1,9 @@
 // config.js
 // https://fontawesome.com/search?ic=free (iconos)
 
+// config.js
+// https://fontawesome.com/search?ic=free (iconos)
+
 const CONFIG = {
   baseUrl: 'https://www.saiasoftware.com',
   paths: {
@@ -22,7 +25,7 @@ const CONFIG = {
         'Complete todos los campos obligatorios marcados con asterisco (*). Este formulario le permite registrar Peticiones, Quejas o Reclamos relacionados con nuestros servicios. Para una gestión eficiente, proporcione información precisa y detallada sobre su caso. Al enviar este formulario, sus datos serán procesados según nuestra política de protección de datos. Recibirá confirmación y número de radicado en el correo electrónico registrado. Tiempo estimado de respuesta: 5-15 días hábiles según el tipo de solicitud.',
     },
     service2: {
-      iconProcesoSaia: 'fa-solid fa-house',
+      iconProcesoSaia: 'fa-solid fa-house icon-service',
       labelProcesoSaia: 'Proceso de SAIA',
       textProcesoSaia:
         'Ingresa tu curriculum de forma segura en nuestro sistema para participar en procesos de selección.',

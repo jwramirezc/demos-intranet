@@ -323,56 +323,6 @@
     <script text="text/javascript" src="../assets/js/apply_config.js"> </script>
     <script text="text/javascript" src="../config/config.js"> </script>
 
-    <!-- Inicializar tooltips de Bootstrap -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Inicializar todos los tooltips
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-            });
-
-            // Código existente para manejo de facturas
-            const btnUpload = document.getElementById('btn-upload');
-            const btnMoreFacturas = document.getElementById('mas-facturas');
-            const textUpload = document.getElementById('text-upload');
-            // URL destino
-            const targetUrl = CONFIG.paths.services.factura;
-
-            btnUpload.addEventListener('click', () => {
-                // Obtener el contenedor
-                const container = document.getElementById('contenedor-iframe');
-                // Versión con spinner
-                container.innerHTML = `
-                <div class="cargando">
-                    <div class="spinner"></div>
-                    <p>CARGANDO...</p>
-                </div>
-                `;
-                // Crear el iframe
-                const iframe = document.createElement('iframe');
-                iframe.src = targetUrl;
-                iframe.style.width = '100%';
-                iframe.style.height = '500px';
-                iframe.style.border = 'none';
-                iframe.style.display = 'none'; // Ocultar el iframe inicialmente
-                // Cuando el iframe termine de cargar, mostrar el contenido y ocultar el mensaje
-                iframe.onload = function () {
-                    document.querySelector('.cargando').style.display = 'none';
-                    iframe.style.display = 'block';
-                };
-                // Añadir el iframe al contenedor (junto al mensaje de carga)
-                container.appendChild(iframe);
-            });
-
-            // Función para ocultar elementos
-            function hideElements() {
-                btnUpload.style.display = 'none';
-                btnMoreFacturas.style.display = 'none';
-                textUpload.innerHTML = 'Por Favor Diligencie los Datos de la Factura';
-            }
-        });
-    </script>
 </body>
 
 </html>
