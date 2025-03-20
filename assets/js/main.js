@@ -16,6 +16,7 @@ function loadCurrentConfig() {
   const config = getConfig();
   const service2 = config.serviceInfo.service2;
 
+  logo.value = logoPath || '';
   iconInput.value = service2.iconProcesoSaia || '';
   labelInput.value = service2.labelProcesoSaia || '';
   textInput.value = service2.textProcesoSaia || '';

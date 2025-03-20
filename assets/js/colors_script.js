@@ -203,9 +203,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Hacer disponible globalmente
   window.themeSwitcher = themeSwitcher;
-
-  console.log(
-    'Theme Switcher inicializado. Tema actual: ' +
-      localStorage.getItem('selectedTheme')
-  );
 });

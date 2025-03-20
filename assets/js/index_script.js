@@ -38,10 +38,10 @@ class ServiceModal {
       // Si no hay configuración en localStorage, usamos valores predeterminados
       // para evitar errores
       this.config = {
-        // baseUrl: 'https://www.saiasoftware.com',
+        baseUrl: 'https://www.saiasoftware.com',
         paths: {
           images: {
-            logo: 'https://www.saiasoftware.com/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_saia_standard.png',
+            logo: '/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_saia_standard.png',
           },
           services: {
             pqrs: '/pqrsdemo1/',

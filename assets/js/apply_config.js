@@ -7,7 +7,7 @@ function initializeConfiguration() {
   if (!localStorage.getItem('portalConfig')) {
     // Si no existe, intentamos obtener una copia de la configuración predeterminada
     // a través de una solicitud fetch al archivo config.js
-    fetch('./config/config.js')
+    fetch('./assets/config/config.js')
       .then(response => response.text())
       .then(text => {
         // Extraemos el objeto CONFIG del texto del archivo
@@ -34,5 +34,11 @@ function initializeConfiguration() {
 
 // Inicializamos la configuración cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function () {
+  // Verificamos si window.CONFIG existe antes de usarlo
+  if (window.CONFIG) {
+    document.getElementById('logoImage').src =
+      window.CONFIG.baseUrl + window.CONFIG.paths.images.logo;
+  }
+
   initializeConfiguration();
 });

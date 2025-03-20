@@ -2,13 +2,13 @@
 // Este archivo maneja la configuración usando localStorage
 
 // Importamos la configuración base
-import CONFIG from '../config/config.js';
+import CONFIG from './config_module.js';
 
 // Función para inicializar el sistema de configuración
 function initConfigManager() {
   // Verificar si ya existe configuración en localStorage
   if (!localStorage.getItem('portalConfig')) {
-    // Si no existe, guardamos la configuración inicial
+    // Si no existe, guardamos la configuración inicialS
     localStorage.setItem('portalConfig', JSON.stringify(CONFIG));
   }
 }

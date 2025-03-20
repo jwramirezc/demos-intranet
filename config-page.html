@@ -7,95 +7,8 @@
     <title>Configuración del Portal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
+    <link rel="stylesheet" href="assets/css/config-page.css">
 
-        .config-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .save-btn {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .reset-btn {
-            background-color: #f44336;
-            color: white;
-        }
-
-        .back-btn {
-            background-color: #2196F3;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .success-message {
-            color: green;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .icon-preview {
-            margin-top: 10px;
-            font-size: 24px;
-        }
-    </style>
 </head>
 
 <body>
@@ -144,6 +57,7 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
+    <script src="./assets/config/config.js"></script>
     <script type="module">
         import { initConfigManager, getConfig, updateService2, resetToDefault } from './assets/js/config_manager.js';
 
