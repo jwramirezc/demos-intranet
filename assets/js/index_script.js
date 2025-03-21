@@ -38,13 +38,13 @@ class ServiceModal {
       // Si no hay configuración en localStorage, usamos valores predeterminados
       // para evitar errores
       this.config = {
-        baseUrl: 'https://www.saiasoftware.com',
+        // baseUrl: 'https://www.saiasoftware.com',
         paths: {
           images: {
-            logo: '/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_saia_standard.png',
+            logo: 'https://www.saiasoftware.com/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_saia_standard.png',
           },
           services: {
-            pqrs: '/pqrsdemo1/',
+            pqrs: 'https://saiademo.netsaia.com/ws/pqr/index.html',
             factura: 'https://saiademo.netsaia.com/ws/factura_email/index.html',
             login: './pages/login.html',
           },
@@ -77,17 +77,14 @@ class ServiceModal {
     // Datos de servicios
     this.serviceData = {
       service1: {
-        url: this.config.paths.services.pqrs.startsWith('http')
-          ? this.config.paths.services.pqrs
-          : this.config.baseUrl + this.config.paths.services.pqrs,
+        url: this.config.paths.services.pqrs,
         nameWindow: this.config.serviceInfo.service1.nameWindow,
         modalContent: this.config.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: this.config.serviceInfo.service2.enlaceProcesoSaia, // Ya contiene la URL completa
+        url: this.config.serviceInfo.service2.enlaceProcesoSaia,
         iconProcesoSaia: this.config.serviceInfo.service2.iconProcesoSaia,
         labelProcesoSaia: this.config.serviceInfo.service2.labelProcesoSaia,
-        // enlaceProcesoSaia: this.config.serviceInfo.service2.enlaceProcesoSaia,
         textProcesoSaia: this.config.serviceInfo.service2.textProcesoSaia,
         nameWindow: this.config.serviceInfo.service2.nameWindow,
         modalContent: this.config.serviceInfo.service2.modalContent,

@@ -36,8 +36,7 @@ function initializeConfiguration() {
 document.addEventListener('DOMContentLoaded', function () {
   // Verificamos si window.CONFIG existe antes de usarlo
   if (window.CONFIG) {
-    document.getElementById('logoImage').src =
-      window.CONFIG.baseUrl + window.CONFIG.paths.images.logo;
+    document.getElementById('logoImage').src = window.CONFIG.paths.images.logo;
   }
 
   initializeConfiguration();
