@@ -75,6 +75,7 @@
         // Referencias a elementos del DOM
         const iconInput = document.getElementById('iconProcesoSaia');
         const labelInput = document.getElementById('labelProcesoSaia');
+        const enlaceProcesoSaia = document.getElementById('enlaceProcesoSaia');
         const textInput = document.getElementById('textProcesoSaia');
         const nameWindowInput = document.getElementById('nameWindow');
         const modalContentInput = document.getElementById('modalContent');
@@ -90,6 +91,7 @@
 
             iconInput.value = service2.iconProcesoSaia || '';
             labelInput.value = service2.labelProcesoSaia || '';
+            enlaceProcesoSaia.value = service2.enlaceProcesoSaia || '';
             textInput.value = service2.textProcesoSaia || '';
             nameWindowInput.value = service2.nameWindow || '';
             modalContentInput.value = service2.modalContent || '';
@@ -111,6 +113,7 @@
             const newConfig = {
                 iconProcesoSaia: iconInput.value,
                 labelProcesoSaia: labelInput.value,
+                enlaceProcesoSaia: enlaceProcesoSaia.value,
                 textProcesoSaia: textInput.value,
                 nameWindow: nameWindowInput.value,
                 modalContent: modalContentInput.value

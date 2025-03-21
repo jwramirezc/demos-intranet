@@ -46,8 +46,6 @@ class ServiceModal {
           services: {
             pqrs: '/pqrsdemo1/',
             factura: 'https://saiademo.netsaia.com/ws/factura_email/index.html',
-            enlaceProcesoSaia:
-              'https://saiademo.netsaia.com/ws/factura_email/index.html',
             login: './pages/login.html',
           },
         },
@@ -60,6 +58,8 @@ class ServiceModal {
           service2: {
             iconProcesoSaia: 'fa-solid fa-house icon-service',
             labelProcesoSaia: 'Proceso de SAIA',
+            enlaceProcesoSaia:
+              'https://saiademo.netsaia.com/ws/factura_email/index.html',
             textProcesoSaia:
               'Ingresa al enlace y registra de forma segura en nuestro sistema SAIA para iniciar la solicitud de tu proceso.',
             nameWindow: 'Proceso de SAIA en la Modal',
@@ -84,9 +84,10 @@ class ServiceModal {
         modalContent: this.config.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: this.config.paths.services.enlaceProcesoSaia, // Ya contiene la URL completa
+        url: this.config.serviceInfo.service2.enlaceProcesoSaia, // Ya contiene la URL completa
         iconProcesoSaia: this.config.serviceInfo.service2.iconProcesoSaia,
         labelProcesoSaia: this.config.serviceInfo.service2.labelProcesoSaia,
+        // enlaceProcesoSaia: this.config.serviceInfo.service2.enlaceProcesoSaia,
         textProcesoSaia: this.config.serviceInfo.service2.textProcesoSaia,
         nameWindow: this.config.serviceInfo.service2.nameWindow,
         modalContent: this.config.serviceInfo.service2.modalContent,
