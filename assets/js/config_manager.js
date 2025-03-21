@@ -1,45 +1,76 @@
-// config_manager.js
-// Este archivo maneja la configuración usando localStorage
+// config_manager.js - Módulo para gestionar la configuración del portal
 
-// Importamos la configuración base
-import CONFIG from './config_module.js';
-
-// Función para inicializar el sistema de configuración
-function initConfigManager() {
-  // Verificar si ya existe configuración en localStorage
-  if (!localStorage.getItem('portalConfig')) {
-    // Si no existe, guardamos la configuración inicialS
-    localStorage.setItem('portalConfig', JSON.stringify(CONFIG));
+/**
+ * Inicializa el gestor de configuración
+ */
+export function initConfigManager() {
+  // Si no hay configuración guardada, inicializar con CONFIG global
+  if (!localStorage.getItem('portalConfig') && window.CONFIG) {
+    localStorage.setItem('portalConfig', JSON.stringify(window.CONFIG));
   }
 }
 
-// Función para obtener la configuración actual
-function getConfig() {
-  // Obtener configuración del localStorage o usar la por defecto
+/**
+ * Obtiene la configuración actual
+ * @returns {Object} Configuración actual
+ */
+export function getConfig() {
   const savedConfig = localStorage.getItem('portalConfig');
-  return savedConfig ? JSON.parse(savedConfig) : CONFIG;
+
+  if (savedConfig) {
+    return JSON.parse(savedConfig);
+  } else if (window.CONFIG) {
+    return window.CONFIG;
+  } else {
+    console.error('No se encontró ninguna configuración disponible');
+    return {};
+  }
 }
 
-// Función específica para actualizar service2
-function updateService2(newConfig) {
+/**
+ * Actualiza la configuración completa
+ * @param {Object} newConfig - Nueva configuración
+ */
+export function updateConfig(newConfig) {
+  localStorage.setItem('portalConfig', JSON.stringify(newConfig));
+
+  // Si existe la función updatePortalConfig, actualizar en tiempo real
+  if (window.updatePortalConfig) {
+    window.updatePortalConfig(newConfig);
+  }
+}
+
+/**
+ * Actualiza solo la configuración del servicio 2
+ * @param {Object} service2Config - Nueva configuración para service2
+ */
+export function updateService2(service2Config) {
   const currentConfig = getConfig();
 
-  // Actualizamos solo service2
+  // Actualizar solo las propiedades del service2
   currentConfig.serviceInfo.service2 = {
     ...currentConfig.serviceInfo.service2,
-    ...newConfig,
+    ...service2Config,
   };
 
-  // Guardamos la configuración actualizada
-  localStorage.setItem('portalConfig', JSON.stringify(currentConfig));
-
-  return currentConfig;
+  updateConfig(currentConfig);
 }
 
-// Función para restaurar valores por defecto
-function resetToDefault() {
-  localStorage.setItem('portalConfig', JSON.stringify(CONFIG));
-  return CONFIG;
-}
+/**
+ * Restaura la configuración a los valores por defecto
+ */
+export function resetToDefault() {
+  if (window.CONFIG) {
+    // Usar la configuración original de CONFIG
+    localStorage.setItem('portalConfig', JSON.stringify(window.CONFIG));
 
-export { initConfigManager, getConfig, updateService2, resetToDefault };
+    // Si existe la función updatePortalConfig, actualizar en tiempo real
+    if (window.updatePortalConfig) {
+      window.updatePortalConfig(window.CONFIG);
+    }
+  } else {
+    console.error(
+      'No se encontró la configuración por defecto (window.CONFIG)'
+    );
+  }
+}
