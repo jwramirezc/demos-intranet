@@ -61,7 +61,7 @@ class ServiceModal {
             iconProcesoSaia: 'fa-solid fa-house icon-service',
             labelProcesoSaia: 'Proceso de SAIA',
             textProcesoSaia:
-              'Ingresa tu curriculum de forma segura en nuestro sistema para participar en procesos de selección.',
+              'Ingresa al enlace y registra de forma segura en nuestro sistema SAIA para iniciar la solicitud de tu proceso.',
             nameWindow: 'Proceso de SAIA en la Modal',
             modalContent:
               'Complete todos los campos obligatorios marcados con asterisco (*).',
