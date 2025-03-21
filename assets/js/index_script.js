@@ -20,61 +20,37 @@ class ServiceModal {
     this.nameWindow = document.getElementById('modal-label');
     this.modalContent = document.getElementById('modal-content');
 
-    // Obtenemos la configuración desde localStorage
-    this.loadConfigFromStorage();
+    // Cargar configuración
+    this.loadConfig();
 
     // Inicializar los event listeners
     this.initEventListeners();
   }
 
   /**
-   * Carga la configuración desde localStorage
+   * Carga la configuración desde localStorage o usa CONFIG global como fallback
    */
-  loadConfigFromStorage() {
+  loadConfig() {
+    // Intentar obtener configuración del localStorage
     const savedConfig = localStorage.getItem('portalConfig');
+
+    // Si hay config en localStorage, usarla
     if (savedConfig) {
       this.config = JSON.parse(savedConfig);
-    } else {
-      // Si no hay configuración en localStorage, usamos valores predeterminados
-      // para evitar errores
-      this.config = {
-        // baseUrl: 'https://www.saiasoftware.com',
-        paths: {
-          images: {
-            logo: 'https://www.saiasoftware.com/wp-content/uploads/proyectos_saia/imagenesdemos/logo_portal_saia_standard.png',
-          },
-          services: {
-            pqrs: 'https://saiademo.netsaia.com/ws/pqr/index.html',
-            factura: 'https://saiademo.netsaia.com/ws/factura_email/index.html',
-            login: './pages/login.html',
-          },
-        },
-        serviceInfo: {
-          service1: {
-            nameWindow: 'Gestión de PQRS',
-            modalContent:
-              'Complete todos los campos obligatorios marcados con asterisco (*).',
-          },
-          service2: {
-            iconProcesoSaia: 'fa-solid fa-house icon-service',
-            labelProcesoSaia: 'Proceso de SAIA',
-            enlaceProcesoSaia:
-              'https://saiademo.netsaia.com/ws/factura_email/index.html',
-            textProcesoSaia:
-              'Ingresa al enlace y registra de forma segura en nuestro sistema SAIA para iniciar la solicitud de tu proceso.',
-            nameWindow: 'Proceso de SAIA en la Modal',
-            modalContent:
-              'Complete todos los campos obligatorios marcados con asterisco (*).',
-          },
-          service3: {
-            nameWindow: '',
-            modalContent: '',
-          },
-        },
-      };
+    }
+    // Si no hay config en localStorage, usar CONFIG global (de config.js)
+    else if (window.CONFIG) {
+      this.config = window.CONFIG;
+      // Guardar en localStorage para futuros usos
+      localStorage.setItem('portalConfig', JSON.stringify(window.CONFIG));
+    }
+    // Si no hay ninguna fuente disponible, mostrar error
+    else {
+      console.error('No se encontró configuración disponible');
+      return;
     }
 
-    // Datos de servicios
+    // Preparar datos de servicios basados en la configuración
     this.serviceData = {
       service1: {
         url: this.config.paths.services.pqrs,
@@ -82,7 +58,9 @@ class ServiceModal {
         modalContent: this.config.serviceInfo.service1.modalContent,
       },
       service2: {
-        url: this.config.serviceInfo.service2.enlaceProcesoSaia,
+        url:
+          this.config.serviceInfo.service2.enlaceProcesoSaia ||
+          this.config.paths.services.factura,
         iconProcesoSaia: this.config.serviceInfo.service2.iconProcesoSaia,
         labelProcesoSaia: this.config.serviceInfo.service2.labelProcesoSaia,
         textProcesoSaia: this.config.serviceInfo.service2.textProcesoSaia,
@@ -90,7 +68,7 @@ class ServiceModal {
         modalContent: this.config.serviceInfo.service2.modalContent,
       },
       service3: {
-        url: this.config.paths.services.login, // URL relativa
+        url: this.config.paths.services.login,
         nameWindow: this.config.serviceInfo.service3.nameWindow,
         modalContent: this.config.serviceInfo.service3.modalContent,
       },
@@ -148,9 +126,15 @@ class ServiceModal {
     // Escuchar cambios en localStorage para actualizar la interfaz
     window.addEventListener('storage', e => {
       if (e.key === 'portalConfig') {
-        this.loadConfigFromStorage();
+        this.loadConfig();
       }
     });
+
+    // Método para actualizar en tiempo real si hay cambios en la configuración global
+    window.updatePortalConfig = newConfig => {
+      localStorage.setItem('portalConfig', JSON.stringify(newConfig));
+      this.loadConfig();
+    };
   }
 
   /**
@@ -169,9 +153,6 @@ class ServiceModal {
     if (this.modalContent) {
       this.modalContent.innerHTML = serviceInfo.modalContent;
     }
-
-    // No necesitamos esto ya que Bootstrap maneja la visualización del modal
-    // this.modalContainer.style.display = 'block';
   }
 
   /**
