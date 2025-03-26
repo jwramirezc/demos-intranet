@@ -14,7 +14,7 @@
 /* Estilo para el mensaje de éxito */
 .floating-message {
   position: fixed;
-  bottom: 100px;
+  bottom: 200px;
   right: 30px;
   z-index: 1050;
   min-width: 300px;
