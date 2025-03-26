@@ -12,6 +12,7 @@ class ServiceModal {
     this.service1 = document.getElementById('service-1');
     this.service2 = document.getElementById('service-2');
     this.service3 = document.getElementById('service-3');
+    this.service4 = document.getElementById('service-4');
     // Elementos de tarjetas y modal
     this.serviceIframe = document.getElementById('service-iframe');
     this.iconProcesoSaia = document.getElementById('icon-proceso');
@@ -53,24 +54,29 @@ class ServiceModal {
     // Preparar datos de servicios basados en la configuración
     this.serviceData = {
       service1: {
-        url: this.config.paths.services.pqrs,
+        url: this.config.paths.services.correspondencia,
         nameWindow: this.config.serviceInfo.service1.nameWindow,
         modalContent: this.config.serviceInfo.service1.modalContent,
       },
       service2: {
-        url:
-          this.config.serviceInfo.service2.enlaceProcesoSaia ||
-          this.config.paths.services.factura,
-        iconProcesoSaia: this.config.serviceInfo.service2.iconProcesoSaia,
-        labelProcesoSaia: this.config.serviceInfo.service2.labelProcesoSaia,
-        textProcesoSaia: this.config.serviceInfo.service2.textProcesoSaia,
+        url: this.config.paths.services.pqrs,
         nameWindow: this.config.serviceInfo.service2.nameWindow,
         modalContent: this.config.serviceInfo.service2.modalContent,
       },
       service3: {
-        url: this.config.paths.services.login,
+        url:
+          this.config.serviceInfo.service3.enlaceProcesoSaia ||
+          this.config.paths.services.factura,
+        iconProcesoSaia: this.config.serviceInfo.service3.iconProcesoSaia,
+        labelProcesoSaia: this.config.serviceInfo.service3.labelProcesoSaia,
+        textProcesoSaia: this.config.serviceInfo.service3.textProcesoSaia,
         nameWindow: this.config.serviceInfo.service3.nameWindow,
         modalContent: this.config.serviceInfo.service3.modalContent,
+      },
+      service4: {
+        url: this.config.paths.services.login,
+        nameWindow: this.config.serviceInfo.service4.nameWindow,
+        modalContent: this.config.serviceInfo.service4.modalContent,
       },
     };
 
@@ -82,19 +88,19 @@ class ServiceModal {
    * Inicializa los datos del proceso a medida
    */
   initProcess() {
-    if (this.iconProcesoSaia && this.serviceData.service2.iconProcesoSaia) {
+    if (this.iconProcesoSaia && this.serviceData.service3.iconProcesoSaia) {
       this.iconProcesoSaia.className =
-        this.serviceData.service2.iconProcesoSaia;
+        this.serviceData.service3.iconProcesoSaia;
     }
 
-    if (this.labelProcesoSaia && this.serviceData.service2.labelProcesoSaia) {
+    if (this.labelProcesoSaia && this.serviceData.service3.labelProcesoSaia) {
       this.labelProcesoSaia.innerHTML =
-        this.serviceData.service2.labelProcesoSaia;
+        this.serviceData.service3.labelProcesoSaia;
     }
 
-    if (this.textProcesoSaia && this.serviceData.service2.textProcesoSaia) {
+    if (this.textProcesoSaia && this.serviceData.service3.textProcesoSaia) {
       this.textProcesoSaia.innerHTML =
-        this.serviceData.service2.textProcesoSaia;
+        this.serviceData.service3.textProcesoSaia;
     }
   }
 
@@ -102,7 +108,7 @@ class ServiceModal {
    * Inicializa todos los event listeners para los servicios
    */
   initEventListeners() {
-    // Event listener para servicio 1
+    // Event listener para servicio 2
     if (this.service1) {
       this.service1.addEventListener('click', () => {
         this.openModal(this.serviceData.service1);
@@ -116,10 +122,17 @@ class ServiceModal {
       });
     }
 
-    // Event listener para servicio 3 (abrir en nueva ventana)
+    // Event listener para servicio 3
     if (this.service3) {
       this.service3.addEventListener('click', () => {
-        this.openExternalUrl(this.serviceData.service3.url);
+        this.openModal(this.serviceData.service3);
+      });
+    }
+
+    // Event listener para servicio 4 (abrir en nueva ventana)
+    if (this.service4) {
+      this.service4.addEventListener('click', () => {
+        this.openExternalUrl(this.serviceData.service4.url);
       });
     }
 

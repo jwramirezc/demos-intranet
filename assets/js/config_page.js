@@ -30,14 +30,14 @@ function initConfigPage() {
    */
   function loadCurrentConfig() {
     const config = getConfig();
-    const service2 = config.serviceInfo.service2;
+    const service3 = config.serviceInfo.service3;
 
-    iconInput.value = service2.iconProcesoSaia || '';
-    labelInput.value = service2.labelProcesoSaia || '';
-    enlaceProcesoSaia.value = service2.enlaceProcesoSaia || '';
-    textInput.value = service2.textProcesoSaia || '';
-    nameWindowInput.value = service2.nameWindow || '';
-    modalContentInput.value = service2.modalContent || '';
+    iconInput.value = service3.iconProcesoSaia || '';
+    labelInput.value = service3.labelProcesoSaia || '';
+    enlaceProcesoSaia.value = service3.enlaceProcesoSaia || '';
+    textInput.value = service3.textProcesoSaia || '';
+    nameWindowInput.value = service3.nameWindow || '';
+    modalContentInput.value = service3.modalContent || '';
 
     // Actualizar previsualización del icono
     updateIconPreview();
