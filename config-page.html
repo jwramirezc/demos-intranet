@@ -9,8 +9,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/config-page.css">
     <link rel="stylesheet" href="assets/css/messages.css">
-
-
 </head>
 
 <body>
@@ -19,17 +17,29 @@
             <i class="fas fa-arrow-left"></i> Volver al Portal
         </button>
 
-        <h1>Configuración del Portal</h1>
-        <p>Modifique la configuración del servicio "Proceso de SAIA" a continuación:</p>
+        <h2>Configuración Proceso a Medida</h2>
+        <p>Modifique la configuración del servicio "Proceso de SAIA" a la medida a continuación:</p>
 
-        <div class="form-group">
-            <label for="iconProcesoSaia">Icono (clase de Font Awesome):</label>
-            <input type="text" id="iconProcesoSaia" placeholder="Ej: fa-solid fa-house icon-service">
-            <div id="iconPreview" class="icon-preview"></div>
-            <div> <a href="https://fontawesome.com/search?ic=free" target="_blank">
-                    Ver iconos.
-                </a></div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="iconProcesoSaia">Icono (clase de Font Awesome):</label>
+                        <input type="text" id="iconProcesoSaia" placeholder="Ej: fa-solid fa-house icon-service">
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex align-items-center">
+                    <div id="iconPreview" class="icon-preview me-3"></div>
+                    <div> <a href="https://fontawesome.com/search?ic=free" target="_blank">
+                            Ver iconos</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
 
         <div class="form-group">
             <label for="labelProcesoSaia">Etiqueta:</label>
@@ -67,20 +77,12 @@
             <button type="button" class="btn-close" id="closeMessageBtn" aria-label="Cerrar">×</button>
         </div>
 
-
-
-        <!-- <p class="alert alert-success success-message" role="alert" id="successMessage">¡Configuración guardada con
-            éxito!</p> -->
-
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-
     <script src="./assets/config/config.js"></script>
-
     <script src="./assets/js/messages.js"></script>
-
     <!-- Cargar script de la página (usando type="module" para importaciones ES6) -->
     <script type="module" src="./assets/js/config_page.js"></script>
 </body>
