@@ -47,7 +47,7 @@ export function updateConfig(newConfig) {
 export function updateService2(service3Config) {
   const currentConfig = getConfig();
 
-  // Actualizar solo las propiedades del service2
+  // Actualizar solo las propiedades del service3
   currentConfig.serviceInfo.service3 = {
     ...currentConfig.serviceInfo.service3,
     ...service3Config,
