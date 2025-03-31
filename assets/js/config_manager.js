@@ -41,16 +41,16 @@ export function updateConfig(newConfig) {
 }
 
 /**
- * Actualiza solo la configuración del servicio 2
- * @param {Object} service2Config - Nueva configuración para service2
+ * Actualiza solo la configuración del servicio 3
+ * @param {Object} service3Config - Nueva configuración para service3
  */
-export function updateService2(service2Config) {
+export function updateService2(service3Config) {
   const currentConfig = getConfig();
 
   // Actualizar solo las propiedades del service2
-  currentConfig.serviceInfo.service2 = {
-    ...currentConfig.serviceInfo.service2,
-    ...service2Config,
+  currentConfig.serviceInfo.service3 = {
+    ...currentConfig.serviceInfo.service3,
+    ...service3Config,
   };
 
   updateConfig(currentConfig);
